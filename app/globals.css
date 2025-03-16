@@ -1,3 +1,87 @@
-@import "tailwindcss";
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
 
+/* Base styles */
+body {
+  @apply bg-white text-gray-900 transition-colors duration-300;
+}
 
+[data-theme='dark'] body {
+  @apply bg-gray-900 text-white;
+}
+
+/* Smooth scroll behavior */
+html {
+  scroll-behavior: smooth;
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  @apply bg-gray-200;
+}
+
+::-webkit-scrollbar-thumb {
+  @apply bg-indigo-500 rounded-md;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  @apply bg-indigo-400;
+}
+
+/* Animations */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.animate-fade-in {
+  animation: fadeIn 0.5s ease-out forwards;
+}
+
+/* Grid pattern background */
+.grid-pattern {
+  background-image: radial-gradient(rgba(255, 255, 255, 0.1) 1px, transparent 1px);
+  background-size: 30px 30px;
+}
+
+/* Utility classes */
+.section-container {
+  @apply max-w-5xl mx-auto px-6 py-12;
+}
+
+.section-title {
+  @apply text-3xl font-bold text-center text-gray-800 dark:text-gray-100;
+}
+
+.section-subtitle {
+  @apply text-lg text-gray-500 dark:text-gray-300 text-center mb-8;
+}
+
+/* Card styles */
+.card {
+  @apply bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-700 rounded-lg shadow-md p-6 transition-all;
+}
+
+.card:hover {
+  @apply shadow-lg transform -translate-y-1;
+}
+
+/* Button styles */
+.primary-button {
+  @apply bg-indigo-600 text-white font-semibold py-3 px-6 rounded-lg transition-all;
+}
+
+.primary-button:hover {
+  @apply bg-indigo-500 transform scale-105;
+}
